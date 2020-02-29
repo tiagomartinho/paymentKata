@@ -1,34 +1,35 @@
-//
-//  cardTests.swift
-//  cardTests
-//
-//  Created by Tiago Martinho on 29/02/2020.
-//  Copyright © 2020 Tiago Martinho. All rights reserved.
-//
-
 import XCTest
 @testable import card
 
 class cardTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func testDefaultCardHasNoPaymentOption() {
+        let card = Card()
+        XCTAssertNil(card.paymentOption)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testCardCanHavePaymentOption() {
+        let card = Card(paymentOption: PaymentOption(selected: false))
+        
+        XCTAssertNotNil(card.paymentOption)
     }
+    
+    func testCardWithPaymentOptionOff() {
+        let paymentOption = PaymentOption(selected: false)
+        let card = Card(paymentOption: paymentOption)
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertFalse(card.paymentOption!.selected)
     }
+}
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+class Card {
+    let paymentOption: PaymentOption?
+
+    init(paymentOption: PaymentOption? = nil) {
+        self.paymentOption = paymentOption
     }
+}
 
+struct PaymentOption {
+    let selected: Bool
 }
