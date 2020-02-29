@@ -4,8 +4,11 @@ class ViewController: NSViewController {
 
     @IBOutlet weak var switchLidlPay: NSSwitch!
     @IBOutlet weak var descriptinTextField: NSTextField!
-
-    lazy var presenter = CardPresenter(view: self)
+    @IBOutlet weak var cardName: NSTextField!
+    @IBOutlet weak var cardLogo: NSTextField!
+    
+    let service = InMemoryCardInformationService()
+    lazy var presenter = CardPresenter(view: self, cardInformationService: service)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +24,31 @@ class ViewController: NSViewController {
         }
     }
     @IBAction func swithcPayToggl(_ sender: NSSwitch) {
+        //USER SELECTS PAY WITH LIDL PAY
+//        if sender.state == .on {
+        presenter.enablePayment()
+//        } else {
+//            presenter.disableLidlPay()
+//        }
     }
 }
 
 extension ViewController: CardView {
+    func showCreditCardInformation(cardInformation: CardInformation) {
+        cardName.isHidden = false
+        cardName.stringValue = cardInformation.name
+        cardLogo.isHidden = false
+        cardLogo.stringValue = cardInformation.logo
+    }
+    
     func showPaymentOption() {
         switchLidlPay.isHidden = false
         descriptinTextField.isHidden = false
+    }
+}
+
+class InMemoryCardInformationService: CardInformationService {
+    func load() -> CardInformation {
+        return CardInformation(logo: "mastercard logo", name: "Plamen")
     }
 }

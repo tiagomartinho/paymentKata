@@ -12,6 +12,8 @@
 		EA17F47E240A71C200452875 /* CardPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA17F47D240A71C200452875 /* CardPresenterTest.swift */; };
 		EA17F480240A727C00452875 /* CardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA17F47F240A727C00452875 /* CardPresenter.swift */; };
 		EA17F482240A728500452875 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA17F481240A728500452875 /* CardView.swift */; };
+		EA17F484240A782E00452875 /* CardInformationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA17F483240A782E00452875 /* CardInformationService.swift */; };
+		EA17F486240A784000452875 /* CardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA17F485240A784000452875 /* CardInformation.swift */; };
 		EAACED49240A6CCB00EABAE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACED48240A6CCB00EABAE8 /* AppDelegate.swift */; };
 		EAACED4B240A6CCB00EABAE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACED4A240A6CCB00EABAE8 /* ViewController.swift */; };
 		EAACED4D240A6CCC00EABAE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAACED4C240A6CCC00EABAE8 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		EA17F47D240A71C200452875 /* CardPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenterTest.swift; sourceTree = "<group>"; };
 		EA17F47F240A727C00452875 /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
 		EA17F481240A728500452875 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		EA17F483240A782E00452875 /* CardInformationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInformationService.swift; sourceTree = "<group>"; };
+		EA17F485240A784000452875 /* CardInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInformation.swift; sourceTree = "<group>"; };
 		EAACED45240A6CCB00EABAE8 /* card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = card.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAACED48240A6CCB00EABAE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAACED4A240A6CCB00EABAE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				EA17F47A240A715B00452875 /* PaymentOption.swift */,
 				EA17F47F240A727C00452875 /* CardPresenter.swift */,
 				EA17F481240A728500452875 /* CardView.swift */,
+				EA17F483240A782E00452875 /* CardInformationService.swift */,
+				EA17F485240A784000452875 /* CardInformation.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -218,8 +224,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA17F486240A784000452875 /* CardInformation.swift in Sources */,
 				EAACED4B240A6CCB00EABAE8 /* ViewController.swift in Sources */,
 				EA17F47B240A715B00452875 /* PaymentOption.swift in Sources */,
+				EA17F484240A782E00452875 /* CardInformationService.swift in Sources */,
 				EA17F479240A715200452875 /* Card.swift in Sources */,
 				EAACED49240A6CCB00EABAE8 /* AppDelegate.swift in Sources */,
 				EA17F482240A728500452875 /* CardView.swift in Sources */,
