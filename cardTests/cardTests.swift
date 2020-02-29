@@ -9,7 +9,8 @@ class CardTests: XCTestCase {
     }
     
     func testCardCanHavePaymentOption() {
-        let card = Card(paymentOption: PaymentOption(selected: false))
+        let paymentOption = PaymentOption(selected: false)
+        let card = Card(paymentOption: paymentOption)
         
         XCTAssertNotNil(card.paymentOption)
     }

@@ -112,8 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				EAACED5B240A6CCC00EABAE8 /* CardTests.swift */,
-				EAACED5D240A6CCC00EABAE8 /* Info.plist */,
 				EA17F47D240A71C200452875 /* CardPresenterTest.swift */,
+				EAACED5D240A6CCC00EABAE8 /* Info.plist */,
 			);
 			path = cardTests;
 			sourceTree = "<group>";
