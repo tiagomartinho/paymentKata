@@ -14,8 +14,9 @@
 		EA17F482240A728500452875 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA17F481240A728500452875 /* CardView.swift */; };
 		EA17F484240A782E00452875 /* CardInformationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA17F483240A782E00452875 /* CardInformationService.swift */; };
 		EA17F486240A784000452875 /* CardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA17F485240A784000452875 /* CardInformation.swift */; };
+		EA17F488240A7B1F00452875 /* InMemoryCardInformationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA17F487240A7B1F00452875 /* InMemoryCardInformationService.swift */; };
 		EAACED49240A6CCB00EABAE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACED48240A6CCB00EABAE8 /* AppDelegate.swift */; };
-		EAACED4B240A6CCB00EABAE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACED4A240A6CCB00EABAE8 /* ViewController.swift */; };
+		EAACED4B240A6CCB00EABAE8 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACED4A240A6CCB00EABAE8 /* CardViewController.swift */; };
 		EAACED4D240A6CCC00EABAE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAACED4C240A6CCC00EABAE8 /* Assets.xcassets */; };
 		EAACED50240A6CCC00EABAE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAACED4E240A6CCC00EABAE8 /* Main.storyboard */; };
 		EAACED5C240A6CCC00EABAE8 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAACED5B240A6CCC00EABAE8 /* CardTests.swift */; };
@@ -39,9 +40,10 @@
 		EA17F481240A728500452875 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		EA17F483240A782E00452875 /* CardInformationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInformationService.swift; sourceTree = "<group>"; };
 		EA17F485240A784000452875 /* CardInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInformation.swift; sourceTree = "<group>"; };
+		EA17F487240A7B1F00452875 /* InMemoryCardInformationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryCardInformationService.swift; sourceTree = "<group>"; };
 		EAACED45240A6CCB00EABAE8 /* card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = card.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAACED48240A6CCB00EABAE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EAACED4A240A6CCB00EABAE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EAACED4A240A6CCB00EABAE8 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		EAACED4C240A6CCC00EABAE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAACED4F240A6CCC00EABAE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAACED51240A6CCC00EABAE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,10 +78,29 @@
 				EA17F47A240A715B00452875 /* PaymentOption.swift */,
 				EA17F47F240A727C00452875 /* CardPresenter.swift */,
 				EA17F481240A728500452875 /* CardView.swift */,
-				EA17F483240A782E00452875 /* CardInformationService.swift */,
-				EA17F485240A784000452875 /* CardInformation.swift */,
 			);
 			path = Card;
+			sourceTree = "<group>";
+		};
+		EA17F489240A7B2D00452875 /* Card Information */ = {
+			isa = PBXGroup;
+			children = (
+				EA17F483240A782E00452875 /* CardInformationService.swift */,
+				EA17F485240A784000452875 /* CardInformation.swift */,
+				EA17F487240A7B1F00452875 /* InMemoryCardInformationService.swift */,
+			);
+			path = "Card Information";
+			sourceTree = "<group>";
+		};
+		EA17F48A240A7B5700452875 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EAACED48240A6CCB00EABAE8 /* AppDelegate.swift */,
+				EAACED4C240A6CCC00EABAE8 /* Assets.xcassets */,
+				EAACED51240A6CCC00EABAE8 /* Info.plist */,
+				EAACED52240A6CCC00EABAE8 /* card.entitlements */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		EAACED3C240A6CCB00EABAE8 = {
@@ -103,12 +124,10 @@
 		EAACED47240A6CCB00EABAE8 /* card */ = {
 			isa = PBXGroup;
 			children = (
-				EAACED48240A6CCB00EABAE8 /* AppDelegate.swift */,
-				EAACED4A240A6CCB00EABAE8 /* ViewController.swift */,
-				EAACED4C240A6CCC00EABAE8 /* Assets.xcassets */,
+				EA17F48A240A7B5700452875 /* Supporting Files */,
+				EAACED4A240A6CCB00EABAE8 /* CardViewController.swift */,
 				EAACED4E240A6CCC00EABAE8 /* Main.storyboard */,
-				EAACED51240A6CCC00EABAE8 /* Info.plist */,
-				EAACED52240A6CCC00EABAE8 /* card.entitlements */,
+				EA17F489240A7B2D00452875 /* Card Information */,
 				EA17F47C240A717500452875 /* Card */,
 			);
 			path = card;
@@ -224,8 +243,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA17F488240A7B1F00452875 /* InMemoryCardInformationService.swift in Sources */,
 				EA17F486240A784000452875 /* CardInformation.swift in Sources */,
-				EAACED4B240A6CCB00EABAE8 /* ViewController.swift in Sources */,
+				EAACED4B240A6CCB00EABAE8 /* CardViewController.swift in Sources */,
 				EA17F47B240A715B00452875 /* PaymentOption.swift in Sources */,
 				EA17F484240A782E00452875 /* CardInformationService.swift in Sources */,
 				EA17F479240A715200452875 /* Card.swift in Sources */,
@@ -383,12 +403,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = card/card.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "card/Supporting Files/card.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4C34FT6ABU;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = card/Info.plist;
+				INFOPLIST_FILE = "card/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -403,12 +423,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = card/card.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "card/Supporting Files/card.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4C34FT6ABU;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = card/Info.plist;
+				INFOPLIST_FILE = "card/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
