@@ -1,19 +1,13 @@
-//
-//  ViewController.swift
-//  card
-//
-//  Created by Tiago Martinho on 29/02/2020.
-//  Copyright © 2020 Tiago Martinho. All rights reserved.
-//
-
 import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var switchLidlPay: NSSwitch!
+    @IBOutlet weak var descriptinTextField: NSTextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override var representedObject: Any? {
@@ -21,7 +15,5 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
-
 }
 

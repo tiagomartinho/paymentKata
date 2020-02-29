@@ -1,7 +1,7 @@
 import XCTest
 @testable import card
 
-class cardTests: XCTestCase {
+class CardTests: XCTestCase {
     
     func testDefaultCardHasNoPaymentOption() {
         let card = Card()
@@ -20,16 +20,4 @@ class cardTests: XCTestCase {
 
         XCTAssertFalse(card.paymentOption!.selected)
     }
-}
-
-class Card {
-    let paymentOption: PaymentOption?
-
-    init(paymentOption: PaymentOption? = nil) {
-        self.paymentOption = paymentOption
-    }
-}
-
-struct PaymentOption {
-    let selected: Bool
 }
