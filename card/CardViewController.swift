@@ -1,39 +1,28 @@
 import Cocoa
 
-class ViewController: NSViewController {
+class CardViewController: NSViewController {
 
     @IBOutlet weak var switchLidlPay: NSSwitch!
     @IBOutlet weak var descriptinTextField: NSTextField!
     @IBOutlet weak var cardName: NSTextField!
     @IBOutlet weak var cardLogo: NSTextField!
     
-    let service = InMemoryCardInformationService()
-    lazy var presenter = CardPresenter(view: self, cardInformationService: service)
+    lazy var presenter = CardPresenter(view: self,
+                                       cardInformationService: InMemoryCardInformationService())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let paymentOption = PaymentOption(selected: false)
-//        let paymentOption: PaymentOption? = nil
         let card = Card(paymentOption: paymentOption)
         presenter.load(with: card)
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
+    
     @IBAction func swithcPayToggl(_ sender: NSSwitch) {
-        //USER SELECTS PAY WITH LIDL PAY
-        if sender.state == .on {
-        presenter.enablePayment()
-        } else {
-            presenter.disablePayment()
-        }
+        sender.state == .on ? presenter.enablePayment() : presenter.disablePayment()
     }
 }
 
-extension ViewController: CardView {
+extension CardViewController: CardView {
     func hideCreditCardInformation() {
         cardName.isHidden = true
         cardLogo.isHidden = true
@@ -49,11 +38,5 @@ extension ViewController: CardView {
     func showPaymentOption() {
         switchLidlPay.isHidden = false
         descriptinTextField.isHidden = false
-    }
-}
-
-class InMemoryCardInformationService: CardInformationService {
-    func load() -> CardInformation {
-        return CardInformation(logo: "mastercard logo", name: "Plamen")
     }
 }
