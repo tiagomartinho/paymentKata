@@ -18,4 +18,8 @@ class CardPresenter {
         let info = cardInformationService.load()
         view?.showCreditCardInformation(cardInformation: info)
     }
+    
+    func disablePayment() {
+        view?.hideCreditCardInformation()
+    }
 }

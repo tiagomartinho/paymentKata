@@ -21,12 +21,21 @@ class CardPresenterTests: XCTestCase {
         
         XCTAssert(view.showCreditCardInformationCalled)
     }
+    
+    func testDisablePaymentOptionHidesCreditCardInformation() {        let view = SpyCardView()
+        let presenter = CardPresenter(view: view, cardInformationService: InMemoryCardInformationService())
+        
+        presenter.disablePayment()
+        
+        XCTAssert(view.hideCreditCardInformationCalled)
+    }
 }
 
 class SpyCardView: CardView {
 
     var showPaymentOptionCalled = false
     var showCreditCardInformationCalled = false
+    var hideCreditCardInformationCalled = false
     
     func showPaymentOption() {
         showPaymentOptionCalled = true
@@ -34,5 +43,9 @@ class SpyCardView: CardView {
     
     func showCreditCardInformation(cardInformation: CardInformation) {
         showCreditCardInformationCalled = true
+    }
+    
+    func hideCreditCardInformation() {
+        hideCreditCardInformationCalled = true
     }
 }

@@ -25,15 +25,20 @@ class ViewController: NSViewController {
     }
     @IBAction func swithcPayToggl(_ sender: NSSwitch) {
         //USER SELECTS PAY WITH LIDL PAY
-//        if sender.state == .on {
+        if sender.state == .on {
         presenter.enablePayment()
-//        } else {
-//            presenter.disableLidlPay()
-//        }
+        } else {
+            presenter.disablePayment()
+        }
     }
 }
 
 extension ViewController: CardView {
+    func hideCreditCardInformation() {
+        cardName.isHidden = true
+        cardLogo.isHidden = true
+    }
+    
     func showCreditCardInformation(cardInformation: CardInformation) {
         cardName.isHidden = false
         cardName.stringValue = cardInformation.name
